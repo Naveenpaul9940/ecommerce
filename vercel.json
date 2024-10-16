@@ -8,8 +8,8 @@
   ],
   "routes": [
     {
-      "src": "/static/(.*)",
-      "dest": "/shop/static/$1"
+      "src": "/(.*)",
+      "dest": "ecommerce/wsgi.py"
     }
   ]
 }

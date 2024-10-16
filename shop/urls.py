@@ -6,5 +6,5 @@ urlpatterns = [
     path('collections/', collections, name='collections'),
     path('cart/', cart, name='cart'),
     path('checkout/', checkout, name='checkout'),
-    path('checkout/success/', checkout_success, name='checkout_success'),
+    path('checkout_success/', checkout_success, name='checkout_success'),
 ]
