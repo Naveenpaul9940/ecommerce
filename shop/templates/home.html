@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% load static %}
+
+{% block main_content %}
+<section class="main-home" style="background-image: url('{% static 'bg.jpg' %}'); background-size: cover; background-position: center; height: 400px; color: white; display: flex; justify-content: center; align-items: center;">
+    <div class="main-text" style="text-align: center; padding: 20px;">
+        <h1 style="font-size: 2.5rem; margin-top: 20px; font-family: 'Montserrat', sans-serif; font-weight: bold; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);">
+            Discover the Latest in Fashion
+        </h1>
+        <p style="font-size: 1rem; margin-bottom: 15px; font-family: 'Roboto', sans-serif; letter-spacing: 1px; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);">
+            Stay ahead of the trends with our curated selection of fashion-forward styles, perfect for any occasion.
+        </p>
+        <a href="{% url 'collections' %}" class="btn btn-primary btn-lg" style="padding: 10px 20px; border-radius: 20px; transition: background-color 0.3s; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); font-size: 0.9rem;">
+            Browse Collections
+        </a>
+    </div>
+</section>
+
+<hr>
+
+<section class="collection-cards" style="padding: 40px 20px; text-align: center;">
+    <h2 style="margin-bottom: 30px; font-size: 2.5rem;">Explore Our Fashion Collections</h2>
+    <div class="row" style="display: flex; flex-wrap: wrap; justify-content: center;">
+        <div class="col-md-4 col-sm-6 mb-4" style="flex: 1 1 300px; max-width: 300px;">
+            <div class="card" style="border: none; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                <img src="{% static 'image2.jpg' %}" class="card-img-top" alt="Collection 1" style="height: 300px; width: auto; max-width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Women's Fashion</h5>
+                    <p class="card-text">Discover elegant and trendy outfits for the modern woman.</p>
+                    <a href="{% url 'collections' %}" class="btn btn-outline-primary">View Collection</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-4" style="flex: 1 1 300px; max-width: 300px;">
+            <div class="card" style="border: none; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                <img src="{% static 'image5.jpg' %}" class="card-img-top" alt="Collection 2" style="height: 300px; width: auto; max-width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Men's Fashion</h5>
+                    <p class="card-text">Stylish and comfortable clothing for the fashion-forward man.</p>
+                    <a href="{% url 'collections' %}" class="btn btn-outline-primary">View Collection</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-4" style="flex: 1 1 300px; max-width: 300px;">
+            <div class="card" style="border: none; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                <img src="{% static 'image6.jpg' %}" class="card-img-top" alt="Collection 3" style="height: 300px; width: auto; max-width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Kid's fashion</h5>
+                    <p class="card-text">Complete your look with our exclusive range of outfits.</p>
+                    <a href="{% url 'collections' %}" class="btn btn-outline-primary">View Collection</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr>
+
+<footer class="footer text-center" style="padding: 20px; background-color: #f8f9fa;">
+    <p class="mb-0">Fashion Hub @2024</p>
+</footer>
+
+<style>
+    @media (max-width: 768px) {
+        .main-home {
+            height: 300px;
+            padding: 20px;
+        }
+
+        .main-text h1 {
+            font-size: 1.5rem;
+            margin-top: 15px;
+        }
+
+        .main-text p {
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        .btn-lg {
+            padding: 8px 15px;
+            font-size: 0.8rem;
+            border-radius: 20px;
+        }
+
+        hr {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .collection-cards .card {
+            margin-bottom: 20px;
+        }
+    }
+</style>
+
+{% endblock %}

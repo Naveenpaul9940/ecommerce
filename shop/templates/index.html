@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Library Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<style>
+    .jumbotron{
+        padding:1rem 1rem;
+        background-color:darkgrey;
+        margin-top: 10px;
+        border-radius: 0.3rem;
+    }
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 60px;
+    }
+    img{
+        background-color: white;
+        border-radius: 30px;
+    }
+
+    .container1{
+        margin-left: 120px;
+
+    }
+</style>
+<body>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid justify-content-center align-items-center">
+            <span class="navbar-brand mb-0 h1" style="color:black">LIBRARY DEPARTMENT</span>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <ul class="nav nav-tabs justify-content-center">
+            <li class="nav-item">
+                {% if current_tab == 'home' %}
+                    <a class="nav-link active" aria-current="page" href="/home">HOME</a>
+                {% else %}
+                    <a class="nav-link" href="/home">HOME</a>
+                {% endif %}
+            </li>
+            <li class="nav-item">
+                {% if current_tab == 'collections' %}
+                    <a class="nav-link active" aria-current="page" href="/collections">COLLECTIONS</a>
+                {% else %}
+                    <a class="nav-link" href="/collections">COLLECTIONS</a>
+                {% endif %}
+            </li>
+            <li class="nav-item">
+                {% if current_tab == 'cart' %}
+                    <a class="nav-link active" aria-current="page" href="/cart">CART</a>
+                {% else %}
+                    <a class="nav-link" href="/cart">CART</a>
+                {% endif %}
+            </li>
+            <li class="nav-item">
+                {% if current_tab == 'checkout' %}
+                    <a class="nav-link active" aria-current="page" href="/checkout">CHECKOUT</a>
+                {% else %}
+                    <a class="nav-link" href="/checkout">CHECKOUT</a>
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+    {% block main_content %}
+    {% endblock %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% load static %}
+
+{% block main_content %}
+<style>
+    .card {
+        transition: transform 0.2s, box-shadow 0.2s; /* Transition for scaling and shadow */
+    }
+
+    .product-image {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for the product image */
+        border-radius: 4px; /* Optional: rounded corners for the shadow effect */
+        overflow: hidden; /* Ensure the image doesn't overflow outside the card */
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4); /* Darker shadow for the entire card on hover */
+    }
+</style>
+
+<section class="collection-cards" style="padding: 40px 20px; text-align: center;">
+    <div class="row" style="display: flex; flex-wrap: wrap; justify-content: center;">
+        {% for product in products %}
+        <div class="col-md-4 col-sm-6 mb-4" style="flex: 1 1 300px; max-width: 300px;">
+            <div class="card" style="border: none;">
+                <div class="product-image">
+                    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}" style="height: 300px; width: auto; max-width: 100%; object-fit: cover;">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">${{ product.price }}</p>
+                    <form method="POST" action="{% url 'collections' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="product_id" value="{{ product.id }}">
+                        <input type="number" name="quantity" value="1" min="1" style="width: 60px; margin-right: 10px;">
+                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+
+{% endblock %}
